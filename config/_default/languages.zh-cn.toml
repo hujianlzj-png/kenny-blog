@@ -1,0 +1,19 @@
+locale = "zh-cn"
+label = "简体中文"
+weight = 9
+ title = "我的博客"
+
+[params]
+  displayName = "简体中文"
+  isoCode = "zh-cn"
+  rtl = false
+  dateFormat = "2006-01-02"
+   description = "分享技术与生活思考"
+
+ [params.author]
+   name = "Kenny"
+   headline = "一个喜欢写代码和文字的普通人"
+   bio = "一名热爱技术的软件工程师，工作之余喜欢写点东西。"
+   links = [
+     { github = "https://gitee.com/swjtuannon" },
+   ]

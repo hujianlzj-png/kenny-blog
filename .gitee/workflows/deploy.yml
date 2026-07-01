@@ -1,0 +1,31 @@
+﻿name: Deploy to Gitee Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.158.0'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.GITEE_DEPLOY_KEY }}
+          external_repository: swjtuannon/blog
+          publish_branch: pages
+          publish_dir: ./public
+          force_orphan: true
