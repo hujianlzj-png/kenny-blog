@@ -1,7 +1,9 @@
 ﻿---
 title: "HTML 语义化：构建有意义的网页结构"
 date: 2026-06-20
-tags: ["技术", "前端"]
+tags: ["HTML", "前端"]
+categories: ["技术"]
+series: ["前端入门"]
 description: "深入理解 HTML 语义化及其重要性"
 ---
 
