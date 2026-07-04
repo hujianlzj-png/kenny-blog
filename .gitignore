@@ -1,22 +1,22 @@
-﻿# Hugo output
-public/
+﻿# 敏感信息文件（本地保存，永不提交）
+*.key
+*.pem
+*.crt
+*.cert
+.env
+.env.*
+secrets.*
+password*
+credentials*
+
+# 个人数据
+personal/
+private/
+secret/
+
+# 日志和缓存
+*.log
 .hugo_build.lock
 
-# OS files
-Thumbs.db
-.DS_Store
-Desktop.ini
-
-# Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Temporary
-tmp/
-*.log
-
-# Deploy temp
-deploy_temp/
+# 构建输出
+public/
