@@ -1,0 +1,139 @@
+baseURL: "https://kenny-blog.pages.dev"
+languageCode: "zh-cn"
+title: "Kenny 的博客"
+theme: hugo-profile
+
+defaultContentLanguage: "zh-cn"
+defaultContentLanguageInSubdir: false
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  title: "Kenny 的博客"
+  description: "Kenny 的个人博客 —— 分享技术与生活思考"
+  favicon: "/fav.png"
+
+  useBootstrapCDN: false
+  animate: true
+
+  theme:
+    defaultTheme: "dark"
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "Kenny"
+    disableSearch: false
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: true
+      disableEducation: true
+      disableProjects: true
+      disableAchievements: true
+      disableContact: false
+
+  hero:
+    enable: true
+    intro: "你好，我是"
+    title: "Kenny"
+    subtitle: "一名热爱技术的软件工程师"
+    content: "专注于 Web 开发，喜欢用代码和文字记录成长。这里分享技术笔记、生活感悟和旅行见闻。"
+    image: /images/hero.svg
+    bottomImage:
+      enable: true
+    roundImage: false
+    button:
+      enable: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/hujianlzj-png
+
+  about:
+    enable: true
+    title: "关于我"
+    image: ""
+    content: |-
+      你好！我是 Kenny，一名热爱技术的软件工程师。
+
+      这个博客是我记录学习过程、分享技术心得和生活感悟的地方。日常工作中主要使用 JavaScript / TypeScript、React、Node.js，偶尔玩 Python 和 Go。
+
+      我相信，把模糊的想法变成清晰的文字，这个过程本身就很有价值。
+    skills:
+      enable: true
+      title: "常用技术栈："
+      items:
+        - "JavaScript / TypeScript"
+        - "React"
+        - "Node.js"
+        - "Python"
+        - "Docker"
+        - "Git"
+
+  experience:
+    enable: false
+
+  education:
+    enable: false
+
+  achievements:
+    enable: false
+
+  projects:
+    enable: false
+
+  contact:
+    enable: false
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: "最新文章"
+      enable: true
+    socialNetworks:
+      github: https://github.com/hujianlzj-png
+
+  listPages:
+    disableFeaturedImage: false
+
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "分钟阅读"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  datesFormat:
+    article: "2006-01-02"
+    articleList: "2006-01-02"
+    articleRecent: "2006-01-02"
