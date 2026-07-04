@@ -164,16 +164,19 @@ params:
     title: "项目实践"
     items:
       - title: "全球网点自动补货系统推广"
+        image: /images/projects/profile.png
         content: "参与自动补货规则的优化设计与推广，自动补货占比从 75% 提升至 90%+。"
         badges:
           - "供应链计划"
           - "数据分析"
       - title: "Knime 自动化数据处理工作流"
+        image: /images/projects/profile.png
         content: "使用 Knime 搭建自动化数据处理流水线，实现数据自动清洗、计算与输出。"
         badges:
           - "Knime"
           - "自动化"
       - title: "SQL 数据指标监控看板"
+        image: /images/projects/profile.png
         content: "基于 SQL 构建关键业务指标的自动化分析监控看板，实现异常数据自动预警与可视化展示。"
         badges:
           - "SQL"
