@@ -1,6 +1,6 @@
 baseURL: "https://kenny-blog.pages.dev"
 languageCode: "zh-cn"
-title: "Kenny Hu - 个人主页"
+title: "Kenny - 个人主页"
 theme: hugo-profile
 
 defaultContentLanguage: "zh-cn"
@@ -26,15 +26,15 @@ markup:
       unsafe: true
 
 params:
-  title: "Kenny Hu - 个人主页"
-  description: "数据分析 | 物流工程硕士 | Kenny Hu 的个人博客"
+  title: "Kenny - 个人主页"
+  description: "数据分析 | 物流工程硕士 | Kenny 的个人博客"
   favicon: "/fav.png"
 
   useBootstrapCDN: false
   animate: true
 
   theme:
-    defaultTheme: "dark"
+    defaultTheme: "light"
 
   font:
     fontSize: 1rem
@@ -80,11 +80,11 @@ params:
     title: "关于我"
     image: ""
     content: |-
-      你好，我是 Kenny，西南交通大学物流工程硕士，导师张小强。
+      你好，我是 Kenny，西南交通大学物流工程硕士。
 
-      教育背景涵盖物流管理本科与物流工程硕士（保研），研究生期间参与多个科研项目，发表学术论文一篇，获授权发明专利一项。
+      教育背景涵盖物流管理本科与物流工程硕士，研究生期间参与多个科研项目，发表学术论文一篇，获授权发明专利一项。
 
-      2024 年暑期在 OPPO 实习，2025 年 7 月正式入职担任备件计划经理（正编 013），核心职责与成果：
+      2024 年暑期在 OPPO 实习，2025 年 7 月正式入职担任备件计划经理，核心职责与成果：
 
       - 负责外销主板备件需求预测、库存管控与供应协调
       - 参与一加数字系列新品导入的 BOM 确认、首单备货及区域铺货全流程
@@ -92,7 +92,7 @@ params:
       - 基于 Knime 搭建自动化数据处理工作流
       - 基于 SQL 构建数据指标自动分析监控看板
 
-      因个人职业发展规划，选择探索新的行业发展方向。持续学习，保持好奇。
+      持续学习，保持好奇。
     skills:
       enable: true
       title: "核心能力"
@@ -113,20 +113,12 @@ params:
           - name: "备件计划经理"
             date: "2025.07 - 2026"
             content: |-
-              正式入职 OPPO，担任备件计划经理（职级：正编 013）。经热线、在线、总部服务、线下站点三个月体系化培训后，正式负责以下业务：
+              入职 OPPO，担任备件计划经理。经热线、在线、总部服务、线下站点三个月体系化培训后，正式负责以下业务：
 
               - **外销主板备件计划**：负责海外市场主板类备件的需求预测、安全库存设定与供应计划编排，保障全球服务网络备件供应及时率。
               - **一加数字系列新品导入**：参与新品上市阶段的 BOM 确认、首单备货策略制定及区域铺货计划。
               - **全球网点自动补货专项**：参与自动补货规则的优化设计与系统落地推广。通过数据分析定位补货盲区，自动补货占比从 75% 提升至 90%+。
               - **数据工具支撑**：使用 Knime 搭建自动化数据处理工作流，基于 SQL 构建关键指标自动监控看板。
-            info:
-              content: 备件计划经理 | 东莞 OPPO
-            featuredItems:
-              fontAwesomeIcons:
-                - icon: fa-solid fa-chart-line
-                  url: ""
-                - icon: fa-solid fa-database
-                  url: ""
 
   education:
     enable: true
@@ -138,18 +130,14 @@ params:
           url: "https://www.swjtu.edu.cn"
         date: "2022 - 2025"
         content: |-
-          保研至西南交通大学物流工程专业，导师张小强教授。
-
-          研究生期间参与多个科研项目，发表学术论文一篇，申请并获授权发明专利一项。
+          西南交通大学物流工程专业，研究生期间参与多个科研项目，发表学术论文一篇，申请并获授权发明专利一项。
       - title: "物流管理 本科"
         school:
           name: "西南交通大学"
           url: "https://www.swjtu.edu.cn"
         date: "2018 - 2022"
         content: |-
-          本科期间获得国家级竞赛一等奖，以及多项省级、校级竞赛奖项。
-
-          系统地学习了供应链管理、物流系统规划、运筹学、统计学等专业课程。
+          本科期间获得国家级竞赛一等奖，以及多项省级、校级竞赛奖项。系统地学习了供应链管理、物流系统规划、运筹学、统计学等专业课程。
 
   achievements:
     enable: true
@@ -169,12 +157,12 @@ params:
     title: "项目实践"
     items:
       - title: "全球网点自动补货系统推广"
-        content: "参与自动补货规则的优化设计与全球推广，覆盖数百个服务网点。通过数据分析和规则迭代，自动补货占比从 75% 提升至 90%+。"
+        content: "参与自动补货规则的优化设计与全球推广。通过数据分析和规则迭代，自动补货占比从 75% 提升至 90%+。"
         badges:
           - "供应链计划"
           - "数据分析"
       - title: "Knime 自动化数据处理工作流"
-        content: "使用 Knime 搭建自动化数据处理流水线，实现数据自动清洗、计算与输出，提升日常报表效率。"
+        content: "使用 Knime 搭建自动化数据处理流水线，实现数据自动清洗、计算与输出。"
         badges:
           - "Knime"
           - "自动化"
