@@ -1,29 +1,29 @@
 [[main]]
-  name = "首页"
+  name = "棣栭〉"
   pageRef = "/"
   weight = 10
 
 [[main]]
-  name = "文章"
+  name = "鏂囩珷"
   pageRef = "blog"
   weight = 20
 
 [[main]]
-  name = "标签"
+  name = "鏍囩"
   pageRef = "tags"
   weight = 30
 
 [[main]]
-  name = "关于"
+  name = "鍏充簬"
   pageRef = "about"
   weight = 40
 
 [[footer]]
-  name = "标签"
+  name = "鏍囩"
   pageRef = "tags"
   weight = 10
 
 [[footer]]
-  name = "关于"
+  name = "鍏充簬"
   pageRef = "about"
   weight = 20

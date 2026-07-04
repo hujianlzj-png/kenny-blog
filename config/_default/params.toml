@@ -1,4 +1,4 @@
-﻿# -- Theme Options --
+# -- Theme Options --
 # These options control how the theme functions and allow you to
 # customise the display of your website.
 #
@@ -61,13 +61,20 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   disableHeroImageFilter = false # only used when layout equals hero
 
  [article]
-   showDate = true
+   showHero = true
+  heroStyle = "basic"
+  showDate = true
    showViews = false
    showLikes = false
    showDateOnlyInArticle = false
    showDateUpdated = false
    showAuthor = true
-   showHero = false
+
+
+
+
+
+
    showBreadcrumbs = true
    showDraftLabel = true
    showEdit = false
@@ -86,7 +93,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
    showZenMode = false
 
 [list]
-  showHero = true
+
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
@@ -107,7 +114,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
 
 [taxonomy]
   showTermCount = true
-  showHero = true
+
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
@@ -116,7 +123,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   cardView = false
 
 [term]
-  showHero = true
+
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false

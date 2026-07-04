@@ -1,7 +1,7 @@
-﻿locale = "zh-cn"
+locale = "zh-cn"
 label = "简体中文"
 weight = 9
-title = "Kenny's Blog"
+title = "Kenny的博客"
 
 [params]
   displayName = "简体中文"
