@@ -1,0 +1,4 @@
+{{/*
+    Custom extensions loaded in <head>
+*/}}
+<link rel="stylesheet" href="{{ (printf "%scss/custom.css" (.Site.Params.staticPath | default "") ) | relURL }}" media="all">
