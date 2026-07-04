@@ -1,4 +1,4 @@
-# Hugo output
+﻿# Hugo output
 public/
 .hugo_build.lock
 
@@ -17,3 +17,6 @@ Desktop.ini
 # Temporary
 tmp/
 *.log
+
+# Deploy temp
+deploy_temp/

@@ -1,9 +1,9 @@
-# -- Site Configuration --
+﻿# -- Site Configuration --
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
- baseURL = "https://swjtuannon.gitee.io"
+baseURL = "https://kenny-blog.pages.dev"
  defaultContentLanguage = "zh-cn"
  disableLanguages = ["de", "en", "es", "fr", "it", "ja", "pt-br", "pt-pt"]
 

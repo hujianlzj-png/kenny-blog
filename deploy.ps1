@@ -1,49 +1,80 @@
-﻿# Gitee Pages 閮ㄧ讲鑴氭湰
-# 鐢ㄦ硶: 鍦?PowerShell 涓繍琛?.\deploy.ps1
-# 
-# 浣跨敤鍓嶈鍏堥厤缃細
-#   1. 鍦?Gitee 涓婂垱寤轰竴涓柊浠撳簱
-#   2. 灏嗕笅闈㈢殑 GITEE_REPO 鏀逛负浣犵殑浠撳簱鍦板潃
+﻿# 个人博客部署脚本 — 同时推送 GitHub + Gitee
+# 用法: .\deploy.ps1 [-Message "自定义commit信息"]
 
-$GITEE_USER = "swjtuannon"
-$GITEE_REPO = "blog"
+param(
+    [string]$Message = ""
+)
 
-Write-Host "=== 1. 鏋勫缓绔欑偣 ===" -ForegroundColor Cyan
-D:\Documents\涓汉鍗氬缃戠珯\bin\hugo.exe --minify
-if ($LASTEXITCODE -ne 0) { Write-Host "鏋勫缓澶辫触" -ForegroundColor Red; exit 1 }
+$ErrorActionPreference = "Stop"
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-Write-Host "=== 2. 鍑嗗閮ㄧ讲鐩綍 ===" -ForegroundColor Cyan
-$deployDir = "$env:TEMP\gitee_deploy"
-if (Test-Path $deployDir) { Remove-Item -Recurse -Force $deployDir }
-New-Item -ItemType Directory -Path $deployDir -Force | Out-Null
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "  个人博客部署 · Hugo + Git" -ForegroundColor Cyan
+Write-Host "========================================`n" -ForegroundColor Cyan
 
-# 澶嶅埗 public/ 鍐呭鍒伴儴缃茬洰褰?Copy-Item -Recurse -Force public\* $deployDir
+# ─── 1. 构建站点 ───
+Write-Host "[1/4] 构建 Hugo 站点..." -ForegroundColor Yellow
+$hugoPath = "D:\Documents\个人博客网站\bin\hugo.exe"
+if (-not (Test-Path $hugoPath)) {
+    $hugoPath = (Get-Command hugo -ErrorAction SilentlyContinue).Source
+}
+if (-not $hugoPath) {
+    Write-Host "  ✗ 未找到 hugo，请安装 Hugo 或将 hugo.exe 放到 bin/ 目录" -ForegroundColor Red
+    exit 1
+}
+Push-Location $projectRoot
+& $hugoPath --minify --cleanDestinationDir
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "  ✗ Hugo 构建失败" -ForegroundColor Red
+    Pop-Location
+    exit 1
+}
+Write-Host "  ✓ 构建完成" -ForegroundColor Green
 
-# 鍒囨崲鍒伴儴缃茬洰褰曞苟鍒濆鍖?git
-Push-Location $deployDir
-git init
-git checkout -b pages
+# ─── 2. 提交源码到 Git ───
+Write-Host "`n[2/4] 提交源码变更..." -ForegroundColor Yellow
+if (-not $Message) {
+    $Message = "deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+}
 git add -A
-git commit -m "deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-
-Write-Host "=== 3. 鎺ㄩ€佸埌 Gitee ===" -ForegroundColor Cyan
-Write-Host "妫€鏌ユ槸鍚﹀凡閰嶇疆杩滅▼浠撳簱..."
-$remotes = git remote -v
-if (-not $remotes) {
-    git remote add origin "git@gitee.com:${GITEE_USER}/${GITEE_REPO}.git"
+$hasChanges = git status --porcelain
+if ($hasChanges) {
+    git commit -m $Message
+    Write-Host "  ✓ 提交: $Message" -ForegroundColor Green
+} else {
+    Write-Host "  · 无变更，跳过提交" -ForegroundColor Gray
 }
 
-Write-Host ""
-Write-Host "鎺ㄩ€佸墠璇风‘璁わ細" -ForegroundColor Yellow
-Write-Host "  1. 宸插湪 Gitee 涓婂垱寤轰粨搴? ${GITEE_USER}/${GITEE_REPO}"
-Write-Host "  2. 宸查厤缃?SSH Key 鎴栦釜浜鸿闂护鐗?
-Write-Host ""
-Write-Host "鎵ц鎺ㄩ€佸懡浠わ細" -ForegroundColor Green
-Write-Host "  git push -f origin pages" -ForegroundColor White
-Write-Host ""
-Write-Host "鎺ㄩ€佸畬鎴愬悗锛屽湪 Gitee 浠撳簱璁剧疆 -> Pages 涓細" -ForegroundColor Yellow
-Write-Host "  - 閮ㄧ讲鍒嗘敮: pages" -ForegroundColor White
-Write-Host "  - 閮ㄧ讲鐩綍: /" -ForegroundColor White
-Write-Host "  - 鐐瑰嚮銆屽惎鍔ㄣ€? -ForegroundColor White
+# ─── 3. 推送到 GitHub ───
+Write-Host "`n[3/4] 推送到 GitHub..." -ForegroundColor Yellow
+$githubRemote = git remote get-url github 2>$null
+if ($githubRemote) {
+    git push github main 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "  ✓ GitHub 推送成功" -ForegroundColor Green
+    } else {
+        Write-Host "  ✗ GitHub 推送失败，请检查 SSH Key 和网络" -ForegroundColor Red
+    }
+} else {
+    Write-Host "  · 未配置 github 远程仓库，跳过" -ForegroundColor Gray
+}
+
+# ─── 4. 推送到 Gitee ───
+Write-Host "`n[4/4] 推送到 Gitee..." -ForegroundColor Yellow
+$giteeRemote = git remote get-url origin 2>$null
+if ($giteeRemote) {
+    git push origin main 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "  ✓ Gitee 推送成功" -ForegroundColor Green
+        Write-Host "`n  如需更新 Gitee Pages，请前往: https://gitee.com/swjtuannon/kenny-blog/pages" -ForegroundColor Cyan
+    } else {
+        Write-Host "  ✗ Gitee 推送失败" -ForegroundColor Red
+    }
+} else {
+    Write-Host "  · 未配置 origin 远程仓库，跳过" -ForegroundColor Gray
+}
 
 Pop-Location
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "  部署流程完成" -ForegroundColor Cyan
+Write-Host "========================================`n" -ForegroundColor Cyan
