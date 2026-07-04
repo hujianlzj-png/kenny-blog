@@ -27,7 +27,7 @@ markup:
 
 params:
   title: "Kenny 的博客"
-  description: "Kenny 的个人博客 —— 分享技术与生活思考"
+  description: "Kenny 的个人博客 —— 记录学习、思考与成长"
   favicon: "/fav.png"
 
   useBootstrapCDN: false
@@ -62,8 +62,8 @@ params:
     enable: true
     intro: "你好，我是"
     title: "Kenny"
-    subtitle: "一名热爱技术的软件工程师"
-    content: "专注于 Web 开发，喜欢用代码和文字记录成长。这里分享技术笔记、生活感悟和旅行见闻。"
+    subtitle: "供应链计划 · 数据分析 · 持续学习者"
+    content: "毕业于西南交通大学物流工程专业，曾在 OPPO 担任备件计划经理，负责全球网点自动补货专项、外销主板备件计划及一加数据系列新品导入。擅长数据分析、自动化流程搭建与项目推动。"
     image: /images/hero.svg
     bottomImage:
       enable: true
@@ -80,21 +80,27 @@ params:
     title: "关于我"
     image: ""
     content: |-
-      你好！我是 Kenny，一名热爱技术的软件工程师。
+      你好！我是 Kenny（胡健），毕业于西南交通大学，物流管理本科 → 物流工程硕士（保研），导师张小强。研究生期间参与多个项目，发表学术论文一篇，获授权发明专利一项。
 
-      这个博客是我记录学习过程、分享技术心得和生活感悟的地方。日常工作中主要使用 JavaScript / TypeScript、React、Node.js，偶尔玩 Python 和 Go。
+      2024 年暑期在 OPPO 实习，2025 年 7 月正式入职 OPPO，担任备件计划经理。工作期间：
+      - 负责外销主板备件计划及一加数据系列新品导入
+      - 主导全球网点自动补货专项推广，自动补货占比从 75% 提升至 90%+
+      - 使用 Knime 搭建自动化数据处理工作流
+      - 基于 SQL 构建数据指标自动分析监控看板
 
-      我相信，把模糊的想法变成清晰的文字，这个过程本身就很有价值。
+      本科期间获得国家级竞赛一等奖、多项省级/校级奖项。英语能力：四级、六级、雅思 7.0。
+
+      因个人职业发展规划，选择探索新的行业方向。持续学习，保持好奇。
     skills:
       enable: true
-      title: "常用技术栈："
+      title: "常用技能工具："
       items:
-        - "JavaScript / TypeScript"
-        - "React"
-        - "Node.js"
-        - "Python"
-        - "Docker"
-        - "Git"
+        - "Python / 数据分析"
+        - "SQL"
+        - "Knime"
+        - "项目方案制作"
+        - "供应链计划"
+        - "英语（雅思 7.0）"
 
   experience:
     enable: false
