@@ -87,7 +87,7 @@ params:
     enable: true
     intro: "你好，我是"
     title: "Kenny"
-    subtitle: "数据分析 · 物流工程硕士"
+    subtitle: "物流工程硕士"
     content: "西南交通大学物流工程硕士。曾在 OPPO 担任备件计划经理，参与全球网点自动补货专项、外销主板备件计划及一加数字系列新品导入。擅长数据分析、自动化流程搭建与供应链计划体系优化。"
     image: /images/hero.svg
     bottomImage:
